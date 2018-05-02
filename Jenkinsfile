@@ -8,7 +8,7 @@ pipeline {
          * Pushing multiple tags is cheap, as all the layers are reused. 
          * Wbdwbd110
          */
-        docker.withRegistry('https://harbor.xuliang.xyz', 'docker-hub-credentials') {
+        	docker.withRegistry('https://harbor.xuliang.xyz', 'docker-hub-credentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
